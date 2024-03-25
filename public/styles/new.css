@@ -88,7 +88,34 @@ label {
     top: -100px;
 }
 
-@media (min-width:414px) and (max-width:768px) {
+footer {
+    padding: 25px 0;
+    margin: 0 auto;
+    text-align: center;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:30px;
+    width:100%;
+}
+
+footer p {
+    display: inline;
+    font-size: 1.2rem;
+    margin: 0 60px;
+}
+
+footer a {
+    color: black;
+}
+
+footer a:hover {
+    color: white;
+}
+
+@media (min-width:360px) and (max-width:667px) {
+    
+
     main, header {
         width: 80%;
         margin: 0 auto;
@@ -105,25 +132,50 @@ label {
     label {
         font-size: 20px;
     }
+    .search {
+        display: block;
+    }
 
     .done-new {
         font-size: 1rem;
         position: relative;
-        left: 180px;
-        
+        left: 140px;
+        top: -60px;
     }
+
+    footer p {
+        font-size: 15px;
+        margin: 0 20px;
+        display: block;
+    }
+
 }
 
-@media (min-width:768px) and (max-width:1200px) {
+
+@media (min-width:668px) and (max-width:1200px) {
     main, header {
         width: 80%;
         margin: 0 auto;
+        text-align: center;
+    }
+
+    input, textarea {
+        max-width: 100%;
     }
     
     h1 {
         font-size: 60px;
     }
 
-
+    footer {
+        display: block;
+        
+    }
+    
+    footer p {
+        font-size: 15px;
+        margin: 0 20px;
+       
+    }
 
 }

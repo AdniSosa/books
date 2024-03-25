@@ -240,6 +240,7 @@ footer a:hover {
   
     main, header {
     width: 90%;
+    margin-left: 30px;
    }
 
     h1 {
@@ -338,7 +339,7 @@ footer a:hover {
     }
 }
 
-@media (min-width:668px) and (max-width:1400px) {
+@media (min-width:668px) and (max-width:1200px) {
     
     main, header {
         width: 80%;
