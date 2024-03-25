@@ -1,0 +1,361 @@
+
+html {
+    display: block;
+}
+body {
+    background-color: rgb(154, 208, 194);
+    font-family: "Nanum Gothic Coding", monospace;
+    margin: 0 auto;
+    
+}
+
+main, header {
+    margin: 0 auto;
+    width: 70%;
+}
+
+h1 {
+    color: rgb(38, 80, 115);
+    font-size: 4rem;
+    
+}
+
+#subtitle {
+    color: black;
+    font-size: 2.1rem;
+    font-weight: 600;
+    margin-top: -30px;
+}
+
+.select-entry {
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.sort-by {
+    font-size: 1.5rem;
+}
+
+
+#sort-select {
+    border: 2px solid rgb(38, 80, 115);
+    font-family: "Nanum Gothic Coding", monospace;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    background-color: white;
+    color: rgb(45, 149, 150);
+    border-radius: 9px;
+    outline: 0;
+}
+
+#entry {
+    color: rgb(45, 149, 150);
+    border: 2px solid rgb(38, 80, 115);
+    font-family: "Nanum Gothic Coding", monospace;
+    font-size: 1.2rem;
+    background-color: rgb(154, 208, 194);
+    border-radius: 9px;
+}
+
+#entry:hover {
+    background-color: rgb(45, 149, 150);
+    color:rgb(154, 208, 194);
+}
+
+.books {
+    width: 1000px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+img {
+    margin-top: 10px;
+    height: 200px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+h2, .inputTitle {
+    font-family: "Nanum Gothic Coding", monospace;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.buttons{
+    margin-left: 20px;
+    position: absolute;
+}
+
+.edit {
+    margin: 10px;
+}
+
+.done {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    top: 20px;
+    left: -1250px;
+
+}
+
+.editForm {
+  display: flex;
+}
+
+.icon {
+    height: 20px;
+    position: relative;
+    left: -30px;
+    top: -5px;
+  }
+
+  .delete {
+    border: none;
+    background-color: transparent;
+    height: 25px;
+    position: relative;
+
+    
+  }
+
+  .delete img {
+    position: absolute;
+    top: -98px;
+    cursor: pointer;
+    left: -30px;
+  }
+
+.description-container {
+    display: flex;
+    width: 120%;
+    
+}
+
+.description, .inputAuthor, .inputRating, .inputDate{
+    font-size: 1.2rem;
+    margin-top: -10px;
+    margin-right: 20px;
+}
+
+.date {
+    width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.inputTitle {
+    position: relative;
+    top: -5px;
+    width: 450px;
+    height: 40px;
+}
+
+.inputAuthor {
+    position: relative;
+    left: -455px;
+    top: 80px;
+    width: 200px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.inputRating {
+    position: relative;
+    left: -455px;
+    top: 80px;
+    width: 30px;
+    height: 30px;
+}
+
+.inputDate {
+    position: relative;
+    left: -455px;
+    top: 80px;
+    width: 150px;
+    height: 30px;
+}
+
+.inputSummary {
+    font-family: "Nanum Gothic Coding", monospace;
+    position: relative;
+    left: -730px;
+    top: 180px;
+    width: 800px;
+    height: 150px;
+    font-size: 1.2rem;
+}
+
+span {
+    font-weight: bold;
+}
+
+.book-cover {
+    margin-bottom: 0;
+}
+
+.paragraph {
+    font-size: 1.2rem;
+    text-align: justify;
+    position: relative;
+    left: 100px;
+    top: -190px;
+    width: 80%;
+    margin: auto auto;
+}
+
+hr {
+    border: 1.5px solid rgb(45, 149, 150);
+}
+
+
+footer {
+    background-color: rgb(38, 80, 115);
+    padding: 25px 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer p {
+    display: inline;
+    font-size: 1.2rem;
+    margin: 0 60px;
+    
+}
+
+footer a {
+    color: black;
+}
+
+footer a:hover {
+    color: white;
+}
+
+@media (min-width:360px) and (max-width:667px) {
+  
+  
+    main, header {
+    width: 90%;
+   }
+
+    h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    #subtitle {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .sort-by {
+        font-size: 1.1rem;
+        padding-bottom: 20px;
+    }
+    
+    .select-entry {
+        display: block;
+    }
+
+
+    #sort-select {
+        margin-bottom: 0 10px 15px -5px;
+        font-size: 1rem;
+    }
+    
+    #entry {
+        font-size: 1rem;
+        padding: 1px 0;
+        width: 160px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+    
+    .description, .inputAuthor, .inputRating, .inputDate{
+        font-size: 15px;
+        margin-top: -10px;
+        margin-right: 10px;
+    }
+
+    .inputTitle {
+        width: 280px;
+    }
+
+    .inputAuthor {
+        width: 110px;
+        left: -288px
+    }
+
+    .inputRating {
+        left: -288px;
+    }
+
+    .inputDate {
+        width: 100px;
+        left: -288px;
+    }
+
+    span {
+        display: block;
+    }
+
+    .date {
+        width: 120px;
+    }
+
+    .done {
+        left: -480px;
+    
+    }
+
+    img {
+        position: relative;
+        left: -20px;
+    }
+    .paragraph {
+        width: 150px;
+        font-size: 15px;
+        margin: 20px 60px;
+    }
+
+    .inputSummary {
+        left: -430px;
+        width: 100%;
+        height: 150px;
+        font-size: 18px;
+    }
+
+    footer p {
+        font-size: 15px;
+        margin: 0 20px;
+        display: block;
+    }
+}
+
+@media (min-width:668px) and (max-width:1400px) {
+    
+    main, header {
+        width: 80%;
+        overflow: hidden;
+       }
+
+       .done {
+        left: -890px;
+       }
+    
+    .paragraph {
+        width: 430px;
+        font-size: 17px;
+        margin: auto 80px;
+    }
+
+    .inputSummary {
+        width: 430px;
+    }
+}

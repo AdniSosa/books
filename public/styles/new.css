@@ -1,0 +1,129 @@
+html {
+    display: block;
+}
+body {
+    background-color: rgb(154, 208, 194);
+    font-family: "Nanum Gothic Coding", monospace;
+    width: 80%;
+    margin: 0 auto;
+    
+}
+
+main, header {
+    width: 60%;
+    margin: 0 auto;
+    
+}
+
+h1 {
+    color: rgb(38, 80, 115);
+    font-size: 4rem;
+    
+}
+
+label {
+    font-size: 1.4rem;
+}
+.new {
+    margin: 5px 15px 20px 0;
+    display: block;
+    width: 600px;
+    height: 20px;
+}
+
+.search {
+    background-color: white;
+    font-family: "Nanum Gothic Coding", monospace;
+    color:rgb(38, 80, 115);
+    border-radius: 15%;
+    border-color: rgb(38, 80, 115);
+    
+}
+
+.searchImg {
+    display: inline-block;
+    margin-top: 5px;
+    width: 200px;
+    height: 20px;
+}
+
+.labelImg {
+    display: block;
+}
+
+#input-delete {
+    position: relative;
+}
+
+#input-delete-img {
+    position: absolute;
+    bottom: 60px;
+    left: 740px;
+    
+}
+
+.done-new {
+    background-color: rgb(38, 80, 115);
+    font-family: "Nanum Gothic Coding", monospace;
+    font-size: 1.2rem;
+    color:white;
+    display: block;
+    margin: 50px auto;
+    position: relative;
+    top: -80px;
+    left: 290px;
+    
+}
+
+.done-new:hover {
+    color: black;
+    background-color: rgb(154, 208, 194);
+    font-weight: 700;
+}
+
+#cover-search {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -100px;
+}
+
+@media (min-width:414px) and (max-width:768px) {
+    main, header {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    h1 {
+        font-size: 50px;
+    }
+
+    input, textarea {
+        max-width: 100%;
+    }
+
+    label {
+        font-size: 20px;
+    }
+
+    .done-new {
+        font-size: 1rem;
+        position: relative;
+        left: 180px;
+        
+    }
+}
+
+@media (min-width:768px) and (max-width:1200px) {
+    main, header {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    h1 {
+        font-size: 60px;
+    }
+
+
+
+}

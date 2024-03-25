@@ -1,0 +1,84 @@
+
+    <%- include('partials/header.ejs') %>
+    
+    
+        <header>
+            <h1 id="title">Adniloet Sosa</h1>
+            <p id="subtitle">The Books I've Read</p>
+        </header>
+        <main>
+            
+            <div class="select-entry">
+                <form class="filter" action="/filter" method="post">
+                    <label for="sort-select" class="sort-by">Sort by:
+                        <select id="sort-select" onchange="this.form.submit()" name="select">
+                            <option class="options" value="">(Select one)</option>
+                            <option id="rating" class="options" name="rating" value="Rating">Rating</option>
+                            <option id="ascending-date" class="options" name="ascending" value="ascending">Ascending date</option>
+                            <option id="descending-date" class="options" name="descending" value="descending">Descending date</option>
+                        </select>
+                    </label>
+                </form>
+                <form class="new-entry" action="/add" method="post">
+                <button id="entry" type="submit" name="newEntry" value="Add a new entry +" >"Add a new entry +"</button>
+                </form>
+            </div>
+            <% for(let book of listBooks){%>
+            <div class="books">
+                
+                <h2 id="title<%=book.id%>"><%= book.title %></h2>
+                <div class="buttons"></div>
+                    <form class="editForm" action="/edit" method="post">
+                        <input type="hidden" name="updatedId" value="<%= book.id %>"/>
+                        <input id="inputTitle<%=book.id%>" class="inputTitle" type="text" name="updatedTitle" value="<%= book.title %>" autocomplete="off"
+                        autofocus="true" hidden="true" placeholder="Title"/>
+                        <input id="inputAuthor<%=book.id%>" class="inputAuthor" type="text" name="updatedAuthor" value="<%= book.author %>" autocomplete="off"
+                        autofocus="true" hidden="true" placeholder="Author"/>
+                        <input id="inputRating<%=book.id%>" class="inputRating" type="number" name="updatedRating" value="<%= book.rating %>" autocomplete="off"
+                        autofocus="true" hidden="true" placeholder="Rating (2/5)"/>
+                        <input id="inputDate<%=book.id%>" class="inputDate" type="text" name="updatedDate" value="<%= book.date %>" autocomplete="off"
+                        autofocus="true" hidden="true" placeholder="Date (2022-10-1)"/>
+                        <textarea id="inputSummary<%=book.id%>" class="inputSummary" type="text" name="updatedSummary" value="<%= book.summary %>" autocomplete="off"
+                        autofocus="true" hidden="true" placeholder="Write your opinion about the book."><%= book.summary %></textarea>
+                        <button id="done<%=book.id%>" class="done" type="submit" hidden><img class="icon" src="/assets/icons/check-mark.svg" alt="tick image"></button>
+                    </form>
+                    
+                    <input id="edit<%=book.id%>" class="edit" type="image" src="/assets/icons/pencil.svg" width="20px" onclick="handler('<%=book.id%>')" name="editBook" value="">
+                    
+                    <form action="/delete" method="post">
+                        <button id="inputDelete<%=book.id%>" class="delete" type="submit" onchange="this.form.submit()" name="deleteBook" value="<%= book.id %>"> <img src="/assets/icons/x-symbol.svg" width="20px" ></button>
+                    </form>
+                    
+                </div>
+                <div class="description-container">
+                    <p id="author<%=book.id%>" class="description"><span>Autor:</span> <%= book.author %></p>
+                    <p id="rating<%=book.id%>" class="description"><span class="rating">Rating:</span> <%= book.rating %>/5</p>
+                    <p id="date<%=book.id%>" class="description date"><span>Date read:</span> <%= book.date %></p>
+                    
+                </div>
+                <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-M.jpg" alt="book cover" />
+                <p id="summary<%=book.id%>" class="paragraph"><%= book.summary %></p>
+                <hr>
+                <% } %>
+            </div>
+        </main>
+        
+        <script> 
+
+            function handler(id) {
+                document.getElementById("title" + id).setAttribute("hidden", true)
+                document.getElementById("edit" + id).setAttribute("hidden", true)
+                document.getElementById("done" + id).removeAttribute("hidden")
+                document.getElementById("inputTitle" + id).removeAttribute("hidden")
+                document.getElementById("inputAuthor" + id).removeAttribute("hidden")
+                document.getElementById("inputRating" + id).removeAttribute("hidden")
+                document.getElementById("inputDate" + id).removeAttribute("hidden")
+                document.getElementById("inputSummary" + id).removeAttribute("hidden")
+                document.getElementById("author" + id).setAttribute("hidden", true)
+                document.getElementById("rating" + id).setAttribute("hidden", true)
+                document.getElementById("date" + id).setAttribute("hidden", true)
+                document.getElementById("summary" + id).setAttribute("hidden", true)
+                document.getElementById("inputDelete" + id).setAttribute("hidden", true)
+             }
+        </script>
+        <%- include('partials/footer.ejs') %>

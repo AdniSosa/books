@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="styles/new.css"/>
+        <title>New Book</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Enter a new book</h1>
+        </header>
+        <main>
+            <form id="edit-form" action="/new" method="post">
+                <label for="newTitle">Title of the book:</label>
+                <input id="newTitle" class="new" type="text" name="newTitle" value="" autocomplete="off"
+                autofocus="true" required/>
+                <label for="newRating">Rating:</label>
+                <input id="newRating" class="new" type="number" name="newRating" value="" autocomplete="off"
+                autofocus="true" required/>
+                <label for="newDate">Date finished reading:</label>
+                <input id="newDate" class="new" type="text" name="newDate" value="" autocomplete="off"
+                autofocus="true"/>
+                <label for="newSummary">Give your opinion about the book:</label>
+                <textarea id="newSummary" class="new" type="text" name="newSummary" value="" autocomplete="off"
+                autofocus="true"></textarea>
+                <label for="newImg" class="labelImg">Book Cover:</label>
+                <input id="new-img" class="searchImg" type="text" name="newISBN" placeholder="Put the ISBN 13 number here"/>
+                <button id="search-img" class="search" type="submit">Search</button>
+                <button class="done-new" type="submit">Submit!</button>
+                
+            </form>
+
+            <div id="cover-search">
+               
+            </div>
+            <form id="delete-img">
+                <input id="input-delete-img" class="delete" type="image" src="/assets/icons/x-symbol.svg" width="10px" name="deleteImg" value="" onchange="this.form.submit()" hidden>
+            </form>
+            
+                
+           
+        </main>
+    </body>
+    <script>
+        let keyword = "";
+        const number = document.querySelector("#new-img");
+        const editForm = document.querySelector("#edit-form");
+        const imageResults = document.getElementById("cover-search");
+        const search = document.getElementById("search-img");
+        const inputDelete = document.getElementById("input-delete-img");
+        const deleteForm = document.querySelector("#deleteForm");
+        
+    
+       async function searchImg() {
+            keyword = number.value;
+            
+            const url = `https://covers.openlibrary.org/b/isbn/${keyword}-M.jpg`;
+            try {
+                const response = await fetch(url);
+                if (response.ok) {
+                    const image = document.createElement("img");
+                    image.src = url;
+                    imageResults.appendChild(image);
+                    inputDelete.removeAttribute("hidden");
+                } else {
+                    console.error("No image found for the provided ISBN.");
+                }
+            } catch (error) {
+                console.error("Error fetching image:", error);
+            }
+        }
+
+         
+        search.onclick = function(e) {
+            e.preventDefault();
+            searchImg();
+         }
+
+
+        function delx() {
+            imageResults.remove();
+            inputDelete.setAttribute("hidden",true);
+            number.value="";
+        }
+
+         inputDelete.onclick = function(e) {
+            e.preventDefault();
+            delx();
+            
+         }
+             
+    </script>
+    <%- include('partials/footer.ejs') %>
